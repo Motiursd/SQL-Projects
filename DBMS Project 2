@@ -616,10 +616,6 @@ GROUP BY TourPackages.package_name
 
 ORDER BY Total_Booking DESC;
 
--- =========================================
--- CUSTOMER BOOKING HISTORY
--- =========================================
-
 SELECT
 Users.full_name,
 TourPackages.package_name,
