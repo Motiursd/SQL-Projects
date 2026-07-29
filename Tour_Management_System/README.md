@@ -2,14 +2,18 @@
 
 <div align="center">
 
+# 🌍 Tour Management System
+
+A professional **Database Management System (DBMS)** project developed using **C++ (Object-Oriented Programming)** and **MySQL**.
+
+This system automates tour package management, bookings, payments, hotels, transport, tour guides, customer reviews, refunds, and administrative operations through a console-based application.
+
 ![C++](https://img.shields.io/badge/C++-17-blue?logo=c%2B%2B)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql)
 ![OOP](https://img.shields.io/badge/OOP-Object%20Oriented-success)
+![DBMS](https://img.shields.io/badge/Database-MySQL-blue)
+![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)
 ![License](https://img.shields.io/badge/License-MIT-green)
-
-A complete **Database Management System (DBMS)** project developed using **C++ (Object-Oriented Programming)** and **MySQL**.
-
-Designed for efficient management of tour packages, bookings, hotels, payments, transport, tour guides, reviews, refunds, and administrative operations.
 
 </div>
 
@@ -17,149 +21,128 @@ Designed for efficient management of tour packages, bookings, hotels, payments, 
 
 # 📖 Project Overview
 
-The **Tour Management System** is a console-based application that automates the complete tour booking process.
+The **Tour Management System** is a console-based application developed using **C++** and **MySQL**.
 
-Customers can browse tour packages, make bookings, complete payments, submit reviews, and manage reservations.
+It provides a complete solution for managing:
 
-Administrators can efficiently manage packages, hotels, transport, payments, refunds, reports, and customers through a secure admin panel.
+- Tour Packages
+- Customer Registration
+- Bookings
+- Payments
+- Hotels
+- Transport
+- Tour Guides
+- Reviews
+- Refunds
+- Reports
+
+The project demonstrates practical implementation of **Object-Oriented Programming (OOP)** concepts together with **Database Management System (DBMS)** concepts.
 
 ---
 
 # ✨ Key Features
 
-## 🔐 User Authentication
+### 🔐 Authentication
 
-- Secure Login System
-- Admin & Customer Roles
+- Admin Login
+- Customer Login
 - Role-based Access Control
 
----
+### 🎒 Tour Package Management
 
-## 🎒 Tour Package Management
-
-- View Tour Packages
-- Add Tour Package
+- Add Package
 - Update Package
 - Delete Package
-- Search Packages
+- Search Package
+- View Package
 
----
-
-## 📅 Booking Management
+### 📅 Booking Management
 
 - Book Tour
-- View Booking History
 - Cancel Booking
+- Booking History
 - Booking Confirmation
 
----
+### 💳 Payment System
 
-## 💳 Payment Management
-
-- Make Payment
+- Payment Processing
 - Payment History
-- Payment Status
 - Invoice Generation
+- Payment Status
 
----
+### 🧾 Invoice
 
-## 🧾 Invoice Generation
-
-- Customer Information
-- Package Information
-- Total Cost
 - Booking Summary
+- Customer Details
+- Package Details
+- Total Cost
 
----
+### 🏨 Hotel Management
 
-## ⭐ Review System
-
-- Give Rating (1–5)
-- Write Comments
-- View Reviews
-
----
-
-## 🏨 Hotel Management
-
-- View Hotels
-- Add Hotel
 - Hotel Information
+- Hotel Booking
 
----
+### 🚌 Transport Management
 
-## 🚌 Transport Management
-
-- View Transport
-- Add Transport
 - Transport Information
+- Vehicle Booking
 
----
+### 🧑‍💼 Tour Guide Management
 
-## 🧑‍💼 Tour Guide Management
-
-- View Tour Guides
-- Add Tour Guide
 - Guide Information
+- Guide Assignment
 
----
+### ⭐ Review System
 
-## 💰 Refund Management
+- Rating
+- Customer Review
+- Comments
 
-- Cancel Booking
+### 💰 Refund Management
+
 - Refund Request
 - Refund Approval
 - Refund Status
 
----
-
-## 🔔 Notification System
+### 🔔 Notification System
 
 Implemented using **MySQL Trigger**
 
-Whenever a booking is inserted, the trigger automatically creates a notification.
-
----
-
-## 📊 Reports & Statistics
+### 📊 Reports
 
 - Revenue Report
 - Booking Statistics
-- Total Customers
-- Total Packages
-- Total Payments
-- Total Refunds
+- Payment Statistics
+- Customer Statistics
+
+### 💾 File Handling
+
+- Save Data
+- Load Data
 
 ---
 
-## 💾 File Handling
-
-- Save Booking Data
-- Load Booking Data
-
----
-
-# 🛠️ Technologies Used
+# 🛠 Technologies Used
 
 | Technology | Purpose |
 |------------|----------|
-| C++ | Console Application |
+| C++ | Application Development |
 | OOP | Object-Oriented Programming |
 | MySQL | Database Backend |
-| MySQL Connector/C++ | Database Connectivity |
 | MySQL Workbench | Database Design |
+| STL | Data Structures |
+| File Handling | Persistent Storage |
 | Git | Version Control |
 | GitHub | Repository Hosting |
 
 ---
 
-# 🗄️ Database Concepts
+# 🗄 Database Concepts
 
-This project implements various DBMS concepts including:
+This project implements:
 
-- Tables
-- Primary Keys
-- Foreign Keys
+- Primary Key
+- Foreign Key
 - Constraints
 - Views
 - Stored Procedures
@@ -173,26 +156,20 @@ This project implements various DBMS concepts including:
 # 📚 Database Modules
 
 - Users
-- Tour Packages
 - Destinations
+- Tour Packages
 - Bookings
 - Payments
+- Refunds
 - Hotels
-- Hotel Booking
 - Transport
-- Transport Booking
-- Employees
+- Tour Guides
 - Reviews
+- Notifications
 - Coupons
 - Wishlist
-- Notifications
-- Tour Guides
-- Package Guide
-- Emergency Contacts
-- Insurance
-- Expenses
 - Activities
-- Refunds
+- Insurance
 - Support Tickets
 
 ---
@@ -210,7 +187,7 @@ Tour_Management_System
 │
 ├── docs
 │   ├── ER_Diagram.png
-│   ├── Relational_Schema.png
+│   ├── relational_schema.png
 │   └── Prisma_Diagram.png
 │
 └── screenshots
@@ -224,81 +201,98 @@ Tour_Management_System
 
 ---
 
-# 🖼️ Database Design
+# 🖼 Database Design
 
 ## ER Diagram
 
-![ER Diagram](docs/ER_Diagram.png)
+<p align="center">
+<img src="docs/ER_Diagram.png" width="900">
+</p>
 
 ---
 
 ## Relational Schema
 
-![Relational Schema](docs/Relational_Schema.png)
+<p align="center">
+<img src="docs/relational_schema.png" width="900">
+</p>
 
 ---
 
 ## Prisma Diagram
 
-![Prisma Diagram](docs/Prisma_Diagram.png)
+<p align="center">
+<img src="docs/Prisma_Diagram.png" width="900">
+</p>
 
 ---
 
 # 📸 Project Screenshots
 
-## Login Page
+## 🔐 Login Page
 
-![Login](screenshots/login.png)
-
----
-
-## Customer Menu
-
-![Customer Menu](screenshots/customer_menu.png)
+<p align="center">
+<img src="screenshots/login.png" width="900">
+</p>
 
 ---
 
-## Admin Menu
+## 👤 Customer Menu
 
-![Admin Menu](screenshots/admin_menu.png)
-
----
-
-## Booking Module
-
-![Booking](screenshots/booking.png)
+<p align="center">
+<img src="screenshots/customer_menu.png" width="900">
+</p>
 
 ---
 
-## Payment Module
+## 👨‍💼 Admin Menu
 
-![Payment](screenshots/payment.png)
-
----
-
-## Statistics Dashboard
-
-![Statistics](screenshots/statistics.png)
+<p align="center">
+<img src="screenshots/admin_menu.png" width="900">
+</p>
 
 ---
 
-# ▶️ How to Run
+## 📅 Booking Module
 
-## Step 1
+<p align="center">
+<img src="screenshots/booking.png" width="900">
+</p>
 
-Clone the repository
+---
+
+## 💳 Payment Module
+
+<p align="center">
+<img src="screenshots/payment.png" width="900">
+</p>
+
+---
+
+## 📊 Statistics Dashboard
+
+<p align="center">
+<img src="screenshots/statistics.png" width="900">
+</p>
+
+---
+
+# ▶️ Installation
+
+## Clone Repository
 
 ```bash
 git clone https://github.com/Motiursd/SQL-Projects.git
+cd SQL-Projects/Tour_Management_System
 ```
 
 ---
 
-## Step 2
+## Import Database
 
-Open MySQL Workbench
+Open **MySQL Workbench**
 
-Run
+Execute
 
 ```sql
 SOURCE tour_Management.sql;
@@ -306,9 +300,7 @@ SOURCE tour_Management.sql;
 
 ---
 
-## Step 3
-
-Compile
+## Compile
 
 ```bash
 g++ main.cpp -o TourManagement
@@ -316,15 +308,7 @@ g++ main.cpp -o TourManagement
 
 ---
 
-## Step 4
-
-Run
-
-Linux
-
-```bash
-./TourManagement
-```
+## Run
 
 Windows
 
@@ -332,19 +316,25 @@ Windows
 TourManagement.exe
 ```
 
+Linux
+
+```bash
+./TourManagement
+```
+
 ---
 
 # 🔑 Demo Login
 
-## 👑 Admin
+## 👑 Administrator
 
-Email
+**Email**
 
 ```
 admin@gmail.com
 ```
 
-Password
+**Password**
 
 ```
 admin123
@@ -354,13 +344,13 @@ admin123
 
 ## 👤 Customer
 
-Email
+**Email**
 
 ```
 motiur@gmail.com
 ```
 
-Password
+**Password**
 
 ```
 12345
@@ -371,31 +361,32 @@ Password
 # 🚀 Future Improvements
 
 - Online Payment Gateway
-- Email Notification
 - QR Code Ticket
+- Email Notification
+- SMS Notification
 - PDF Invoice
-- Password Encryption
 - Customer Registration
+- Password Encryption
 - Search & Filter
 - Analytics Dashboard
 - Mobile Application
-- Cloud Database Support
+- Cloud Database
 
 ---
 
 # 🎓 Learning Outcomes
 
-This project demonstrates practical implementation of:
+This project demonstrates practical knowledge of:
 
 - Database Management System
-- Object-Oriented Programming
 - SQL Programming
-- MySQL Integration
+- MySQL
+- Object-Oriented Programming
+- C++
 - File Handling
-- Console Application Development
-- Software Engineering Principles
-- Database Design
-- Relational Database Concepts
+- Software Engineering
+- Relational Database Design
+- Database Normalization
 
 ---
 
@@ -415,21 +406,26 @@ International Islamic University Chittagong (IIUC)
 
 **Course Teacher:** Mizanur Rahman
 
-GitHub:
+GitHub Profile:
+
 https://github.com/Motiursd
+
+Repository:
+
+https://github.com/Motiursd/SQL-Projects
 
 ---
 
 # 📄 License
 
-This project is developed for educational purposes as a **Database Management Systems (DBMS) Lab Project**.
+This project was developed for academic purposes as part of the **Database Management Systems (CSE 2424)** laboratory course.
 
 ---
 
 <div align="center">
 
-## ⭐ If you like this project, don't forget to give it a Star ⭐
+## ⭐ If you found this project helpful, please consider giving it a Star!
 
-Thank you for visiting this repository.
+Made with ❤️ using **C++**, **MySQL**, and **Object-Oriented Programming**
 
-</div>vai all picture sundor kore dekhai tumi valo kore dekho
+</div>
