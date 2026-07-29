@@ -17,9 +17,11 @@ Designed for efficient management of tour packages, bookings, hotels, payments, 
 
 # 📖 Project Overview
 
-The **Tour Management System** is a console-based application developed using **C++** and **MySQL**. It automates the complete tour booking process by allowing customers to browse tour packages, book tours, make payments, submit reviews, and manage reservations.
+The **Tour Management System** is a console-based application that automates the complete tour booking process.
 
-The system also provides a powerful **Admin Panel** to manage customers, packages, hotels, transport, tour guides, bookings, payments, refunds, and reports.
+Customers can browse tour packages, make bookings, complete payments, submit reviews, and manage reservations.
+
+Administrators can efficiently manage packages, hotels, transport, payments, refunds, reports, and customers through a secure admin panel.
 
 ---
 
@@ -31,74 +33,104 @@ The system also provides a powerful **Admin Panel** to manage customers, package
 - Admin & Customer Roles
 - Role-based Access Control
 
+---
+
 ## 🎒 Tour Package Management
 
 - View Tour Packages
-- Add Package
+- Add Tour Package
 - Update Package
 - Delete Package
 - Search Packages
 
+---
+
 ## 📅 Booking Management
 
-- Book Tour Packages
+- Book Tour
 - View Booking History
 - Cancel Booking
 - Booking Confirmation
 
+---
+
 ## 💳 Payment Management
 
-- Make Payments
-- Payment Status
+- Make Payment
 - Payment History
+- Payment Status
 - Invoice Generation
+
+---
 
 ## 🧾 Invoice Generation
 
-- Booking Summary
-- Customer Details
-- Package Details
+- Customer Information
+- Package Information
 - Total Cost
+- Booking Summary
+
+---
 
 ## ⭐ Review System
 
-- Rating (1–5)
-- Customer Reviews
-- Comments
+- Give Rating (1–5)
+- Write Comments
+- View Reviews
+
+---
 
 ## 🏨 Hotel Management
 
+- View Hotels
+- Add Hotel
 - Hotel Information
-- Hotel Booking
+
+---
 
 ## 🚌 Transport Management
 
+- View Transport
+- Add Transport
 - Transport Information
-- Transport Booking
+
+---
 
 ## 🧑‍💼 Tour Guide Management
 
+- View Tour Guides
+- Add Tour Guide
 - Guide Information
-- Package Guide Assignment
+
+---
 
 ## 💰 Refund Management
 
+- Cancel Booking
 - Refund Request
 - Refund Approval
 - Refund Status
 
+---
+
 ## 🔔 Notification System
 
-Implemented using **MySQL Trigger**.
+Implemented using **MySQL Trigger**
 
-Whenever a customer books a package, the system automatically creates a notification.
+Whenever a booking is inserted, the trigger automatically creates a notification.
+
+---
 
 ## 📊 Reports & Statistics
 
 - Revenue Report
 - Booking Statistics
-- Customer Statistics
-- Payment Statistics
+- Total Customers
+- Total Packages
+- Total Payments
+- Total Refunds
+
+---
 
 ## 💾 File Handling
 
@@ -107,23 +139,27 @@ Whenever a customer books a package, the system automatically creates a notifica
 
 ---
 
-# 🛠 Technologies Used
+# 🛠️ Technologies Used
 
 | Technology | Purpose |
 |------------|----------|
 | C++ | Console Application |
 | OOP | Object-Oriented Programming |
 | MySQL | Database Backend |
+| MySQL Connector/C++ | Database Connectivity |
 | MySQL Workbench | Database Design |
 | Git | Version Control |
 | GitHub | Repository Hosting |
 
 ---
 
-# 🗄 Database Concepts
+# 🗄️ Database Concepts
 
-- Primary Key
-- Foreign Key
+This project implements various DBMS concepts including:
+
+- Tables
+- Primary Keys
+- Foreign Keys
 - Constraints
 - Views
 - Stored Procedures
@@ -142,13 +178,19 @@ Whenever a customer books a package, the system automatically creates a notifica
 - Bookings
 - Payments
 - Hotels
+- Hotel Booking
 - Transport
-- Tour Guides
+- Transport Booking
+- Employees
 - Reviews
 - Coupons
 - Wishlist
 - Notifications
+- Tour Guides
+- Package Guide
+- Emergency Contacts
 - Insurance
+- Expenses
 - Activities
 - Refunds
 - Support Tickets
@@ -182,17 +224,17 @@ Tour_Management_System
 
 ---
 
-# 🖼 Database Design
+# 🖼️ Database Design
 
 ## ER Diagram
 
-![ER Diagram](../docs/ER_Diagram.png)
+![ER Diagram](docs/ER_Diagram.png)
 
 ---
 
 ## Relational Schema
 
-![Relational Schema](docs/relational_schema.png)
+![Relational Schema](docs/Relational_Schema.png)
 
 ---
 
@@ -204,37 +246,37 @@ Tour_Management_System
 
 # 📸 Project Screenshots
 
-## 🔐 Login Page
+## Login Page
 
 ![Login](screenshots/login.png)
 
 ---
 
-## 👤 Customer Menu
+## Customer Menu
 
 ![Customer Menu](screenshots/customer_menu.png)
 
 ---
 
-## 👨‍💼 Admin Menu
+## Admin Menu
 
 ![Admin Menu](screenshots/admin_menu.png)
 
 ---
 
-## 📅 Booking Module
+## Booking Module
 
 ![Booking](screenshots/booking.png)
 
 ---
 
-## 💳 Payment Module
+## Payment Module
 
 ![Payment](screenshots/payment.png)
 
 ---
 
-## 📊 Statistics Dashboard
+## Statistics Dashboard
 
 ![Statistics](screenshots/statistics.png)
 
@@ -242,26 +284,41 @@ Tour_Management_System
 
 # ▶️ How to Run
 
-### Clone Repository
+## Step 1
+
+Clone the repository
 
 ```bash
 git clone https://github.com/Motiursd/SQL-Projects.git
-cd SQL-Projects/Tour_Management_System
 ```
 
-### Import Database
+---
+
+## Step 2
+
+Open MySQL Workbench
+
+Run
 
 ```sql
 SOURCE tour_Management.sql;
 ```
 
-### Compile
+---
+
+## Step 3
+
+Compile
 
 ```bash
 g++ main.cpp -o TourManagement
 ```
 
-### Run
+---
+
+## Step 4
+
+Run
 
 Linux
 
@@ -328,13 +385,17 @@ Password
 
 # 🎓 Learning Outcomes
 
+This project demonstrates practical implementation of:
+
 - Database Management System
 - Object-Oriented Programming
 - SQL Programming
 - MySQL Integration
 - File Handling
-- Software Engineering
+- Console Application Development
+- Software Engineering Principles
 - Database Design
+- Relational Database Concepts
 
 ---
 
@@ -354,20 +415,21 @@ International Islamic University Chittagong (IIUC)
 
 **Course Teacher:** Mizanur Rahman
 
-**GitHub:** https://github.com/Motiursd
+GitHub:
+https://github.com/Motiursd
 
 ---
 
 # 📄 License
 
-This project was developed for academic purposes as part of the **Database Management Systems (CSE 2424)** laboratory course.
+This project is developed for educational purposes as a **Database Management Systems (DBMS) Lab Project**.
 
 ---
 
 <div align="center">
 
-## ⭐ If you found this project helpful, please consider giving it a Star!
+## ⭐ If you like this project, don't forget to give it a Star ⭐
 
 Thank you for visiting this repository.
 
-</div>
+</div>vai all picture sundor kore dekhai tumi valo kore dekho
