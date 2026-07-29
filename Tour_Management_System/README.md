@@ -1,18 +1,34 @@
-# 🗺️ Tour Management System (DBMS & OOP Project)
+# 🗺️ Tour Management System
 
-A professional **Tour Management System** developed using **C++ (Object-Oriented Programming)** and **MySQL**. This project provides a complete solution for managing tour packages, customer bookings, payments, hotels, transport, tour guides, reviews, refunds, and administrative operations through a console-based application.
+<div align="center">
+
+![C++](https://img.shields.io/badge/C++-17-blue?logo=c%2B%2B)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql)
+![OOP](https://img.shields.io/badge/OOP-Object%20Oriented-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+A complete **Database Management System (DBMS)** project developed using **C++ (Object-Oriented Programming)** and **MySQL**.
+
+Designed for efficient management of tour packages, bookings, hotels, payments, transport, tour guides, reviews, refunds, and administrative operations.
+
+</div>
 
 ---
 
-# 📌 Project Overview
+# 📖 Project Overview
 
-The system is designed to automate the entire tour management process. It allows customers to browse tour packages, make bookings, complete payments, generate invoices, submit reviews, and manage reservations. Administrators can efficiently manage packages, hotels, transport, guides, payments, refunds, and system reports.
+The **Tour Management System** is a console-based application that automates the complete tour booking process.
+
+Customers can browse tour packages, make bookings, complete payments, submit reviews, and manage reservations.
+
+Administrators can efficiently manage packages, hotels, transport, payments, refunds, reports, and customers through a secure admin panel.
 
 ---
 
-# 🚀 Features
+# ✨ Key Features
 
-## 👤 User Authentication
+## 🔐 User Authentication
+
 - Secure Login System
 - Admin & Customer Roles
 - Role-based Access Control
@@ -20,47 +36,44 @@ The system is designed to automate the entire tour management process. It allows
 ---
 
 ## 🎒 Tour Package Management
+
 - View Tour Packages
-- Add New Package
+- Add Tour Package
 - Update Package
 - Delete Package
-- Search Packages by Destination
+- Search Packages
 
 ---
 
 ## 📅 Booking Management
-- Book Tour Packages
+
+- Book Tour
 - View Booking History
 - Cancel Booking
 - Booking Confirmation
 
 ---
 
-## 💳 Payment System
+## 💳 Payment Management
+
 - Make Payment
+- Payment History
 - Payment Status
-- Payment Records
-- Automatic Invoice Generation
+- Invoice Generation
 
 ---
 
 ## 🧾 Invoice Generation
-- Booking Summary
-- Customer Details
-- Package Details
+
+- Customer Information
+- Package Information
 - Total Cost
-
----
-
-## 🔔 Notification System
-Implemented using **MySQL Trigger**
-
-Whenever a customer books a package, the trigger automatically generates a booking notification.
+- Booking Summary
 
 ---
 
 ## ⭐ Review System
-Customers can:
+
 - Give Rating (1–5)
 - Write Comments
 - View Reviews
@@ -68,35 +81,48 @@ Customers can:
 ---
 
 ## 🏨 Hotel Management
+
 - View Hotels
 - Add Hotel
-- Hotel Information Management
+- Hotel Information
 
 ---
 
 ## 🚌 Transport Management
+
 - View Transport
 - Add Transport
-- Transport Information Management
+- Transport Information
 
 ---
 
 ## 🧑‍💼 Tour Guide Management
+
 - View Tour Guides
 - Add Tour Guide
-- Guide Information Management
+- Guide Information
 
 ---
 
 ## 💰 Refund Management
+
 - Cancel Booking
-- Generate Refund Request
-- Approve Refund
+- Refund Request
+- Refund Approval
 - Refund Status
 
 ---
 
+## 🔔 Notification System
+
+Implemented using **MySQL Trigger**
+
+Whenever a booking is inserted, the trigger automatically creates a notification.
+
+---
+
 ## 📊 Reports & Statistics
+
 - Revenue Report
 - Booking Statistics
 - Total Customers
@@ -107,6 +133,7 @@ Customers can:
 ---
 
 ## 💾 File Handling
+
 - Save Booking Data
 - Load Booking Data
 
@@ -116,52 +143,142 @@ Customers can:
 
 | Technology | Purpose |
 |------------|----------|
-| C++ | Frontend Console Application |
+| C++ | Console Application |
 | OOP | Object-Oriented Programming |
 | MySQL | Database Backend |
-| MySQL Workbench | Database Management |
-| STL (Vector) | Data Storage |
-| File Handling | Save & Load Data |
+| MySQL Connector/C++ | Database Connectivity |
+| MySQL Workbench | Database Design |
+| Git | Version Control |
+| GitHub | Repository Hosting |
 
 ---
 
-# 🗄️ Database Concepts Implemented
+# 🗄️ Database Concepts
+
+This project implements various DBMS concepts including:
 
 - Tables
-- Primary Key
-- Foreign Key
+- Primary Keys
+- Foreign Keys
 - Constraints
 - Views
 - Stored Procedures
 - Triggers
 - Indexing
+- Relationships
+- Normalization
 
 ---
 
-# 📂 Database Modules
+# 📚 Database Modules
 
 - Users
 - Tour Packages
+- Destinations
 - Bookings
 - Payments
-- Refunds
 - Hotels
+- Hotel Booking
 - Transport
-- Tour Guides
+- Transport Booking
+- Employees
 - Reviews
+- Coupons
+- Wishlist
 - Notifications
+- Tour Guides
+- Package Guide
+- Emergency Contacts
+- Insurance
+- Expenses
+- Activities
+- Refunds
+- Support Tickets
 
 ---
 
-# 💻 Project Structure
+# 📁 Project Structure
 
-```
+```text
 Tour_Management_System
 │
 ├── main.cpp
 ├── tour_Management.sql
 ├── README.md
+├── LICENSE
+├── Project_Report.pdf
+│
+├── docs
+│   ├── ER_Diagram.png
+│   ├── Relational_Schema.png
+│   └── Prisma_Diagram.png
+│
+└── screenshots
+    ├── login.png
+    ├── admin_menu.png
+    ├── customer_menu.png
+    ├── booking.png
+    ├── payment.png
+    └── statistics.png
 ```
+
+---
+
+# 🖼️ Database Design
+
+## ER Diagram
+
+![ER Diagram](docs/ER_Diagram.png)
+
+---
+
+## Relational Schema
+
+![Relational Schema](docs/Relational_Schema.png)
+
+---
+
+## Prisma Diagram
+
+![Prisma Diagram](docs/Prisma_Diagram.png)
+
+---
+
+# 📸 Project Screenshots
+
+## Login Page
+
+![Login](screenshots/login.png)
+
+---
+
+## Customer Menu
+
+![Customer Menu](screenshots/customer_menu.png)
+
+---
+
+## Admin Menu
+
+![Admin Menu](screenshots/admin_menu.png)
+
+---
+
+## Booking Module
+
+![Booking](screenshots/booking.png)
+
+---
+
+## Payment Module
+
+![Payment](screenshots/payment.png)
+
+---
+
+## Statistics Dashboard
+
+![Statistics](screenshots/statistics.png)
 
 ---
 
@@ -174,6 +291,8 @@ Clone the repository
 ```bash
 git clone https://github.com/Motiursd/SQL-Projects.git
 ```
+
+---
 
 ## Step 2
 
@@ -201,11 +320,13 @@ g++ main.cpp -o TourManagement
 
 Run
 
+Linux
+
 ```bash
 ./TourManagement
 ```
 
-or (Windows)
+Windows
 
 ```bash
 TourManagement.exe
@@ -247,47 +368,34 @@ Password
 
 ---
 
-# 📸 Project Screenshots
-
-Add screenshots here.
-
-Example:
-
-```
-screenshots/
-    login.png
-    customer_menu.png
-    admin_menu.png
-    booking.png
-    payment.png
-```
-
----
-
-# 📈 Future Improvements
+# 🚀 Future Improvements
 
 - Online Payment Gateway
 - Email Notification
 - QR Code Ticket
 - PDF Invoice
-- Customer Registration
 - Password Encryption
+- Customer Registration
 - Search & Filter
 - Analytics Dashboard
+- Mobile Application
+- Cloud Database Support
 
 ---
 
-# 🎯 Learning Outcomes
+# 🎓 Learning Outcomes
 
 This project demonstrates practical implementation of:
 
+- Database Management System
 - Object-Oriented Programming
-- Database Design
+- SQL Programming
 - MySQL Integration
 - File Handling
 - Console Application Development
-- Data Structures
 - Software Engineering Principles
+- Database Design
+- Relational Database Concepts
 
 ---
 
@@ -295,14 +403,33 @@ This project demonstrates practical implementation of:
 
 **Md. Motiur Rahman**
 
+**Student ID:** C243119
+
 Department of Computer Science & Engineering (CSE)
 
 International Islamic University Chittagong (IIUC)
 
-GitHub: https://github.com/Motiursd
+**Course:** Database Management Systems Lab
+
+**Course Code:** CSE 2424
+
+**Course Teacher:** Mizanur Rahman
+
+GitHub:
+https://github.com/Motiursd
 
 ---
 
 # 📄 License
 
-This project is developed for educational purposes as a **DBMS & OOP academic project**.
+This project is developed for educational purposes as a **Database Management Systems (DBMS) Lab Project**.
+
+---
+
+<div align="center">
+
+## ⭐ If you like this project, don't forget to give it a Star ⭐
+
+Thank you for visiting this repository.
+
+</div>
