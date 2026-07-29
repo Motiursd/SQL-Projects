@@ -2,18 +2,14 @@
 
 <div align="center">
 
-# 🌍 Tour Management System
-
-A professional **Database Management System (DBMS)** project developed using **C++ (Object-Oriented Programming)** and **MySQL**.
-
-This system automates tour package management, bookings, payments, hotels, transport, tour guides, customer reviews, refunds, and administrative operations through a console-based application.
-
 ![C++](https://img.shields.io/badge/C++-17-blue?logo=c%2B%2B)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql)
 ![OOP](https://img.shields.io/badge/OOP-Object%20Oriented-success)
-![DBMS](https://img.shields.io/badge/Database-MySQL-blue)
-![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+A complete **Database Management System (DBMS)** project developed using **C++ (Object-Oriented Programming)** and **MySQL**.
+
+Designed for efficient management of tour packages, bookings, hotels, payments, transport, tour guides, reviews, refunds, and administrative operations.
 
 </div>
 
@@ -21,104 +17,93 @@ This system automates tour package management, bookings, payments, hotels, trans
 
 # 📖 Project Overview
 
-The **Tour Management System** is a console-based application developed using **C++** and **MySQL**.
+The **Tour Management System** is a console-based application developed using **C++** and **MySQL**. It automates the complete tour booking process by allowing customers to browse tour packages, book tours, make payments, submit reviews, and manage reservations.
 
-It provides a complete solution for managing:
-
-- Tour Packages
-- Customer Registration
-- Bookings
-- Payments
-- Hotels
-- Transport
-- Tour Guides
-- Reviews
-- Refunds
-- Reports
-
-The project demonstrates practical implementation of **Object-Oriented Programming (OOP)** concepts together with **Database Management System (DBMS)** concepts.
+The system also provides a powerful **Admin Panel** to manage customers, packages, hotels, transport, tour guides, bookings, payments, refunds, and reports.
 
 ---
 
 # ✨ Key Features
 
-### 🔐 Authentication
+## 🔐 User Authentication
 
-- Admin Login
-- Customer Login
+- Secure Login System
+- Admin & Customer Roles
 - Role-based Access Control
 
-### 🎒 Tour Package Management
+## 🎒 Tour Package Management
 
+- View Tour Packages
 - Add Package
 - Update Package
 - Delete Package
-- Search Package
-- View Package
+- Search Packages
 
-### 📅 Booking Management
+## 📅 Booking Management
 
-- Book Tour
+- Book Tour Packages
+- View Booking History
 - Cancel Booking
-- Booking History
 - Booking Confirmation
 
-### 💳 Payment System
+## 💳 Payment Management
 
-- Payment Processing
+- Make Payments
+- Payment Status
 - Payment History
 - Invoice Generation
-- Payment Status
 
-### 🧾 Invoice
+## 🧾 Invoice Generation
 
 - Booking Summary
 - Customer Details
 - Package Details
 - Total Cost
 
-### 🏨 Hotel Management
+## ⭐ Review System
+
+- Rating (1–5)
+- Customer Reviews
+- Comments
+
+## 🏨 Hotel Management
 
 - Hotel Information
 - Hotel Booking
 
-### 🚌 Transport Management
+## 🚌 Transport Management
 
 - Transport Information
-- Vehicle Booking
+- Transport Booking
 
-### 🧑‍💼 Tour Guide Management
+## 🧑‍💼 Tour Guide Management
 
 - Guide Information
-- Guide Assignment
+- Package Guide Assignment
 
-### ⭐ Review System
-
-- Rating
-- Customer Review
-- Comments
-
-### 💰 Refund Management
+## 💰 Refund Management
 
 - Refund Request
 - Refund Approval
 - Refund Status
 
-### 🔔 Notification System
+## 🔔 Notification System
 
-Implemented using **MySQL Trigger**
+Implemented using **MySQL Trigger**.
 
-### 📊 Reports
+Whenever a customer books a package, the system automatically creates a notification.
+
+## 📊 Reports & Statistics
 
 - Revenue Report
 - Booking Statistics
-- Payment Statistics
 - Customer Statistics
+- Payment Statistics
 
-### 💾 File Handling
+## 💾 File Handling
 
-- Save Data
-- Load Data
+- Save Booking Data
+- Load Booking Data
 
 ---
 
@@ -126,20 +111,16 @@ Implemented using **MySQL Trigger**
 
 | Technology | Purpose |
 |------------|----------|
-| C++ | Application Development |
+| C++ | Console Application |
 | OOP | Object-Oriented Programming |
 | MySQL | Database Backend |
 | MySQL Workbench | Database Design |
-| STL | Data Structures |
-| File Handling | Persistent Storage |
 | Git | Version Control |
 | GitHub | Repository Hosting |
 
 ---
 
 # 🗄 Database Concepts
-
-This project implements:
 
 - Primary Key
 - Foreign Key
@@ -156,20 +137,20 @@ This project implements:
 # 📚 Database Modules
 
 - Users
-- Destinations
 - Tour Packages
+- Destinations
 - Bookings
 - Payments
-- Refunds
 - Hotels
 - Transport
 - Tour Guides
 - Reviews
-- Notifications
 - Coupons
 - Wishlist
-- Activities
+- Notifications
 - Insurance
+- Activities
+- Refunds
 - Support Tickets
 
 ---
@@ -187,7 +168,7 @@ Tour_Management_System
 │
 ├── docs
 │   ├── ER_Diagram.png
-│   ├── relational_schema.png
+│   ├── Relational_Schema.png
 │   └── Prisma_Diagram.png
 │
 └── screenshots
@@ -205,25 +186,19 @@ Tour_Management_System
 
 ## ER Diagram
 
-<p align="center">
-<img src="docs/ER_Diagram.png" width="900">
-</p>
+![ER Diagram](../docs/ER_Diagram.png)
 
 ---
 
 ## Relational Schema
 
-<p align="center">
-<img src="docs/relational_schema.png" width="900">
-</p>
+![Relational Schema](docs/relational_schema.png)
 
 ---
 
 ## Prisma Diagram
 
-<p align="center">
-<img src="docs/Prisma_Diagram.png" width="900">
-</p>
+![Prisma Diagram](docs/Prisma_Diagram.png)
 
 ---
 
@@ -231,90 +206,62 @@ Tour_Management_System
 
 ## 🔐 Login Page
 
-<p align="center">
-<img src="screenshots/login.png" width="900">
-</p>
+![Login](screenshots/login.png)
 
 ---
 
 ## 👤 Customer Menu
 
-<p align="center">
-<img src="screenshots/customer_menu.png" width="900">
-</p>
+![Customer Menu](screenshots/customer_menu.png)
 
 ---
 
 ## 👨‍💼 Admin Menu
 
-<p align="center">
-<img src="screenshots/admin_menu.png" width="900">
-</p>
+![Admin Menu](screenshots/admin_menu.png)
 
 ---
 
 ## 📅 Booking Module
 
-<p align="center">
-<img src="screenshots/booking.png" width="900">
-</p>
+![Booking](screenshots/booking.png)
 
 ---
 
 ## 💳 Payment Module
 
-<p align="center">
-<img src="screenshots/payment.png" width="900">
-</p>
+![Payment](screenshots/payment.png)
 
 ---
 
 ## 📊 Statistics Dashboard
 
-<p align="center">
-<img src="screenshots/statistics.png" width="900">
-</p>
+![Statistics](screenshots/statistics.png)
 
 ---
 
-# ▶️ Installation
+# ▶️ How to Run
 
-## Clone Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/Motiursd/SQL-Projects.git
 cd SQL-Projects/Tour_Management_System
 ```
 
----
-
-## Import Database
-
-Open **MySQL Workbench**
-
-Execute
+### Import Database
 
 ```sql
 SOURCE tour_Management.sql;
 ```
 
----
-
-## Compile
+### Compile
 
 ```bash
 g++ main.cpp -o TourManagement
 ```
 
----
-
-## Run
-
-Windows
-
-```bash
-TourManagement.exe
-```
+### Run
 
 Linux
 
@@ -322,19 +269,25 @@ Linux
 ./TourManagement
 ```
 
+Windows
+
+```bash
+TourManagement.exe
+```
+
 ---
 
 # 🔑 Demo Login
 
-## 👑 Administrator
+## 👑 Admin
 
-**Email**
+Email
 
 ```
 admin@gmail.com
 ```
 
-**Password**
+Password
 
 ```
 admin123
@@ -344,13 +297,13 @@ admin123
 
 ## 👤 Customer
 
-**Email**
+Email
 
 ```
 motiur@gmail.com
 ```
 
-**Password**
+Password
 
 ```
 12345
@@ -361,32 +314,27 @@ motiur@gmail.com
 # 🚀 Future Improvements
 
 - Online Payment Gateway
-- QR Code Ticket
 - Email Notification
-- SMS Notification
+- QR Code Ticket
 - PDF Invoice
-- Customer Registration
 - Password Encryption
+- Customer Registration
 - Search & Filter
 - Analytics Dashboard
 - Mobile Application
-- Cloud Database
+- Cloud Database Support
 
 ---
 
 # 🎓 Learning Outcomes
 
-This project demonstrates practical knowledge of:
-
 - Database Management System
-- SQL Programming
-- MySQL
 - Object-Oriented Programming
-- C++
+- SQL Programming
+- MySQL Integration
 - File Handling
 - Software Engineering
-- Relational Database Design
-- Database Normalization
+- Database Design
 
 ---
 
@@ -406,13 +354,7 @@ International Islamic University Chittagong (IIUC)
 
 **Course Teacher:** Mizanur Rahman
 
-GitHub Profile:
-
-https://github.com/Motiursd
-
-Repository:
-
-https://github.com/Motiursd/SQL-Projects
+**GitHub:** https://github.com/Motiursd
 
 ---
 
@@ -426,6 +368,6 @@ This project was developed for academic purposes as part of the **Database Manag
 
 ## ⭐ If you found this project helpful, please consider giving it a Star!
 
-Made with ❤️ using **C++**, **MySQL**, and **Object-Oriented Programming**
+Thank you for visiting this repository.
 
 </div>
