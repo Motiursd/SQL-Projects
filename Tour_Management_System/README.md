@@ -17,11 +17,9 @@ Designed for efficient management of tour packages, bookings, hotels, payments, 
 
 # 📖 Project Overview
 
-The **Tour Management System** is a console-based application that automates the complete tour booking process.
+The **Tour Management System** is a console-based application developed using **C++** and **MySQL**. It automates the complete tour booking process by allowing customers to browse tour packages, book tours, make payments, submit reviews, and manage reservations.
 
-Customers can browse tour packages, make bookings, complete payments, submit reviews, and manage reservations.
-
-Administrators can efficiently manage packages, hotels, transport, payments, refunds, reports, and customers through a secure admin panel.
+The system also provides a powerful **Admin Panel** to manage customers, packages, hotels, transport, tour guides, bookings, payments, refunds, and reports.
 
 ---
 
@@ -33,104 +31,74 @@ Administrators can efficiently manage packages, hotels, transport, payments, ref
 - Admin & Customer Roles
 - Role-based Access Control
 
----
-
 ## 🎒 Tour Package Management
 
 - View Tour Packages
-- Add Tour Package
+- Add Package
 - Update Package
 - Delete Package
 - Search Packages
 
----
-
 ## 📅 Booking Management
 
-- Book Tour
+- Book Tour Packages
 - View Booking History
 - Cancel Booking
 - Booking Confirmation
 
----
-
 ## 💳 Payment Management
 
-- Make Payment
-- Payment History
+- Make Payments
 - Payment Status
+- Payment History
 - Invoice Generation
-
----
 
 ## 🧾 Invoice Generation
 
-- Customer Information
-- Package Information
-- Total Cost
 - Booking Summary
-
----
+- Customer Details
+- Package Details
+- Total Cost
 
 ## ⭐ Review System
 
-- Give Rating (1–5)
-- Write Comments
-- View Reviews
-
----
+- Rating (1–5)
+- Customer Reviews
+- Comments
 
 ## 🏨 Hotel Management
 
-- View Hotels
-- Add Hotel
 - Hotel Information
-
----
+- Hotel Booking
 
 ## 🚌 Transport Management
 
-- View Transport
-- Add Transport
 - Transport Information
-
----
+- Transport Booking
 
 ## 🧑‍💼 Tour Guide Management
 
-- View Tour Guides
-- Add Tour Guide
 - Guide Information
-
----
+- Package Guide Assignment
 
 ## 💰 Refund Management
 
-- Cancel Booking
 - Refund Request
 - Refund Approval
 - Refund Status
 
----
-
 ## 🔔 Notification System
 
-Implemented using **MySQL Trigger**
+Implemented using **MySQL Trigger**.
 
-Whenever a booking is inserted, the trigger automatically creates a notification.
-
----
+Whenever a customer books a package, the system automatically creates a notification.
 
 ## 📊 Reports & Statistics
 
 - Revenue Report
 - Booking Statistics
-- Total Customers
-- Total Packages
-- Total Payments
-- Total Refunds
-
----
+- Customer Statistics
+- Payment Statistics
 
 ## 💾 File Handling
 
@@ -139,27 +107,23 @@ Whenever a booking is inserted, the trigger automatically creates a notification
 
 ---
 
-# 🛠️ Technologies Used
+# 🛠 Technologies Used
 
 | Technology | Purpose |
 |------------|----------|
 | C++ | Console Application |
 | OOP | Object-Oriented Programming |
 | MySQL | Database Backend |
-| MySQL Connector/C++ | Database Connectivity |
 | MySQL Workbench | Database Design |
 | Git | Version Control |
 | GitHub | Repository Hosting |
 
 ---
 
-# 🗄️ Database Concepts
+# 🗄 Database Concepts
 
-This project implements various DBMS concepts including:
-
-- Tables
-- Primary Keys
-- Foreign Keys
+- Primary Key
+- Foreign Key
 - Constraints
 - Views
 - Stored Procedures
@@ -178,19 +142,13 @@ This project implements various DBMS concepts including:
 - Bookings
 - Payments
 - Hotels
-- Hotel Booking
 - Transport
-- Transport Booking
-- Employees
+- Tour Guides
 - Reviews
 - Coupons
 - Wishlist
 - Notifications
-- Tour Guides
-- Package Guide
-- Emergency Contacts
 - Insurance
-- Expenses
 - Activities
 - Refunds
 - Support Tickets
@@ -224,101 +182,86 @@ Tour_Management_System
 
 ---
 
-# 🖼️ Database Design
+# 🖼 Database Design
 
 ## ER Diagram
 
-![ER Diagram](docs/ER_Diagram.png)
+![ER Diagram](../docs/ER_Diagram.png)
 
 ---
 
 ## Relational Schema
 
-![Relational Schema](docs/Relational_Schema.png)
+![Relational Schema](../docs/relational_schema.png)
 
 ---
 
 ## Prisma Diagram
 
-![Prisma Diagram](docs/Prisma_Diagram.png)
+![Prisma Diagram](../docs/Prisma_Diagram.png)
 
 ---
 
 # 📸 Project Screenshots
 
-## Login Page
+## 🔐 Login Page
 
-![Login](screenshots/login.png)
-
----
-
-## Customer Menu
-
-![Customer Menu](screenshots/customer_menu.png)
+![Login](../screenshots/login.png)
 
 ---
 
-## Admin Menu
+## 👤 Customer Menu
 
-![Admin Menu](screenshots/admin_menu.png)
-
----
-
-## Booking Module
-
-![Booking](screenshots/booking.png)
+![Customer Menu](../screenshots/customer_menu.png)
 
 ---
 
-## Payment Module
+## 👨‍💼 Admin Menu
 
-![Payment](screenshots/payment.png)
+![Admin Menu](../screenshots/admin_menu.png)
 
 ---
 
-## Statistics Dashboard
+## 📅 Booking Module
 
-![Statistics](screenshots/statistics.png)
+![Booking](../screenshots/booking.png)
+
+---
+
+## 💳 Payment Module
+
+![Payment](../screenshots/payment.png)
+
+---
+
+## 📊 Statistics Dashboard
+
+![Statistics](../screenshots/statistics.png)
 
 ---
 
 # ▶️ How to Run
 
-## Step 1
-
-Clone the repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/Motiursd/SQL-Projects.git
+cd SQL-Projects/Tour_Management_System
 ```
 
----
-
-## Step 2
-
-Open MySQL Workbench
-
-Run
+### Import Database
 
 ```sql
 SOURCE tour_Management.sql;
 ```
 
----
-
-## Step 3
-
-Compile
+### Compile
 
 ```bash
 g++ main.cpp -o TourManagement
 ```
 
----
-
-## Step 4
-
-Run
+### Run
 
 Linux
 
@@ -385,17 +328,13 @@ Password
 
 # 🎓 Learning Outcomes
 
-This project demonstrates practical implementation of:
-
 - Database Management System
 - Object-Oriented Programming
 - SQL Programming
 - MySQL Integration
 - File Handling
-- Console Application Development
-- Software Engineering Principles
+- Software Engineering
 - Database Design
-- Relational Database Concepts
 
 ---
 
@@ -415,20 +354,19 @@ International Islamic University Chittagong (IIUC)
 
 **Course Teacher:** Mizanur Rahman
 
-GitHub:
-https://github.com/Motiursd
+**GitHub:** https://github.com/Motiursd
 
 ---
 
 # 📄 License
 
-This project is developed for educational purposes as a **Database Management Systems (DBMS) Lab Project**.
+This project was developed for academic purposes as part of the **Database Management Systems (CSE 2424)** laboratory course.
 
 ---
 
 <div align="center">
 
-## ⭐ If you like this project, don't forget to give it a Star ⭐
+## ⭐ If you found this project helpful, please consider giving it a Star!
 
 Thank you for visiting this repository.
 
