@@ -1,15 +1,13 @@
-// 1. Datasource Configuration
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-// 2. Client Generator
 generator client {
   provider = "prisma-client-js"
 }
 
-// 3. User Model
 model User {
   user_id    Int       @id @default(autoincrement())
   full_name  String?   @db.VarChar(100)
@@ -36,7 +34,6 @@ enum Role {
   Customer
 }
 
-// 4. Tour Package Model
 model TourPackage {
   package_id     Int       @id @default(autoincrement())
   package_name   String?   @db.VarChar(100)
@@ -59,7 +56,6 @@ model TourPackage {
   @@map("TourPackages")
 }
 
-// 5. Booking Model
 model Booking {
   booking_id     Int            @id @default(autoincrement())
   user_id        Int?
@@ -87,7 +83,6 @@ enum BookingStatus {
   Cancelled
 }
 
-// 6. Payment Model
 model Payment {
   payment_id     Int            @id @default(autoincrement())
   booking_id     Int?
@@ -107,7 +102,6 @@ enum PaymentStatus {
   Failed
 }
 
-// 7. Review Model
 model Review {
   review_id   Int          @id @default(autoincrement())
   user_id     Int?
@@ -122,7 +116,6 @@ model Review {
   @@map("Reviews")
 }
 
-// 8. Destination Model
 model Destination {
   destination_id   Int     @id @default(autoincrement())
   destination_name String? @db.VarChar(100)
@@ -134,7 +127,6 @@ model Destination {
   @@map("Destinations")
 }
 
-// Junction Table for Package & Destination
 model PackageDestination {
   pd_id          Int          @id @default(autoincrement())
   package_id     Int?
@@ -146,7 +138,6 @@ model PackageDestination {
   @@map("PackageDestination")
 }
 
-// 9. Hotel Model
 model Hotel {
   hotel_id        Int     @id @default(autoincrement())
   hotel_name      String? @db.VarChar(100)
@@ -173,7 +164,6 @@ model HotelBooking {
   @@map("HotelBooking")
 }
 
-// 10. Transport Model
 model Transport {
   transport_id   Int     @id @default(autoincrement())
   transport_type String? @db.VarChar(50)
@@ -197,7 +187,6 @@ model TransportBooking {
   @@map("TransportBooking")
 }
 
-// 11. Notification Model
 model Notification {
   notification_id Int       @id @default(autoincrement())
   user_id         Int?
@@ -210,7 +199,6 @@ model Notification {
   @@map("Notifications")
 }
 
-// 12. Wishlist Model
 model Wishlist {
   wishlist_id Int          @id @default(autoincrement())
   user_id     Int?
@@ -222,7 +210,6 @@ model Wishlist {
   @@map("Wishlist")
 }
 
-// 13. Tour Guide Model
 model TourGuide {
   guide_id        Int     @id @default(autoincrement())
   guide_name      String? @db.VarChar(100)
@@ -246,7 +233,6 @@ model PackageGuide {
   @@map("PackageGuide")
 }
 
-// 14. Emergency Contact
 model EmergencyContact {
   emergency_id    Int     @id @default(autoincrement())
   user_id         Int?
@@ -259,7 +245,6 @@ model EmergencyContact {
   @@map("EmergencyContacts")
 }
 
-// 15. Insurance
 model Insurance {
   insurance_id     Int      @id @default(autoincrement())
   booking_id       Int?
@@ -271,7 +256,6 @@ model Insurance {
   @@map("Insurance")
 }
 
-// 16. Refund Model
 model Refund {
   refund_id     Int           @id @default(autoincrement())
   booking_id    Int?
@@ -289,7 +273,6 @@ enum RefundStatus {
   Completed
 }
 
-// 17. Support Ticket
 model SupportTicket {
   ticket_id     Int           @id @default(autoincrement())
   user_id       Int?
@@ -308,7 +291,6 @@ enum TicketStatus {
   Pending
 }
 
-// 18. Activity Model
 model Activity {
   activity_id   Int      @id @default(autoincrement())
   activity_name String?  @db.VarChar(100)
