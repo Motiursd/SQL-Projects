@@ -1,1 +1,9 @@
 
+.git
+.gitignore
+*.png
+*.pdf
+docs/
+screenshots/
+README.md
+bookings.txt
