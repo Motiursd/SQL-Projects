@@ -1,0 +1,332 @@
+// 1. Datasource Configuration
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// 2. Client Generator
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 3. User Model
+model User {
+  user_id    Int       @id @default(autoincrement())
+  full_name  String?   @db.VarChar(100)
+  email      String?   @unique @db.VarChar(100)
+  phone      String?   @db.VarChar(20)
+  password   String?   @db.VarChar(100)
+  address    String?   @db.Text
+  role       Role?     @default(Customer)
+  created_at DateTime? @default(now()) @db.Timestamp(0)
+
+  tourPackages TourPackage[]
+  bookings     Booking[]
+  reviews      Review[]
+  wishlist     Wishlist[]
+  notifications Notification[]
+  emergencyContacts EmergencyContact[]
+  supportTickets SupportTicket[]
+
+  @@map("Users")
+}
+
+enum Role {
+  Admin
+  Customer
+}
+
+// 4. Tour Package Model
+model TourPackage {
+  package_id     Int       @id @default(autoincrement())
+  package_name   String?   @db.VarChar(100)
+  destination    String?   @db.VarChar(100)
+  duration_days  Int?
+  price          Decimal?  @db.Decimal(10, 2)
+  max_people     Int?
+  description    String?   @db.Text
+  image_url      String?   @db.VarChar(255)
+  created_by     Int?
+
+  creator        User?     @relation(fields: [created_by], references: [user_id])
+  packageDestinations PackageDestination[]
+  bookings       Booking[]
+  reviews        Review[]
+  wishlist       Wishlist[]
+  packageGuides  PackageGuide[]
+  packageActivities PackageActivities[]
+
+  @@map("TourPackages")
+}
+
+// 5. Booking Model
+model Booking {
+  booking_id     Int            @id @default(autoincrement())
+  user_id        Int?
+  package_id     Int?
+  booking_date   DateTime?      @db.Date
+  travel_date    DateTime?      @db.Date
+  total_people   Int?
+  total_cost     Decimal?       @db.Decimal(10, 2)
+  booking_status BookingStatus? @default(Pending)
+
+  user           User?          @relation(fields: [user_id], references: [user_id])
+  tourPackage    TourPackage?   @relation(fields: [package_id], references: [package_id])
+  payments       Payment[]
+  hotelBookings  HotelBooking[]
+  transportBookings TransportBooking[]
+  insurances     Insurance[]
+  refunds        Refund[]
+
+  @@map("Bookings")
+}
+
+enum BookingStatus {
+  Pending
+  Confirmed
+  Cancelled
+}
+
+// 6. Payment Model
+model Payment {
+  payment_id     Int            @id @default(autoincrement())
+  booking_id     Int?
+  payment_method String?        @db.VarChar(50)
+  amount         Decimal?       @db.Decimal(10, 2)
+  payment_date   DateTime?      @db.Date
+  payment_status PaymentStatus? @default(Pending)
+
+  booking        Booking?       @relation(fields: [booking_id], references: [booking_id])
+
+  @@map("Payments")
+}
+
+enum PaymentStatus {
+  Paid
+  Pending
+  Failed
+}
+
+// 7. Review Model
+model Review {
+  review_id   Int          @id @default(autoincrement())
+  user_id     Int?
+  package_id  Int?
+  rating      Int?
+  comment     String?      @db.Text
+  review_date DateTime?    @db.Date
+
+  user        User?        @relation(fields: [user_id], references: [user_id])
+  tourPackage TourPackage? @relation(fields: [package_id], references: [package_id])
+
+  @@map("Reviews")
+}
+
+// 8. Destination Model
+model Destination {
+  destination_id   Int     @id @default(autoincrement())
+  destination_name String? @db.VarChar(100)
+  country          String? @db.VarChar(100)
+  description      String? @db.Text
+
+  packageDestinations PackageDestination[]
+
+  @@map("Destinations")
+}
+
+// Junction Table for Package & Destination
+model PackageDestination {
+  pd_id          Int          @id @default(autoincrement())
+  package_id     Int?
+  destination_id Int?
+
+  tourPackage    TourPackage? @relation(fields: [package_id], references: [package_id])
+  destination    Destination? @relation(fields: [destination_id], references: [destination_id])
+
+  @@map("PackageDestination")
+}
+
+// 9. Hotel Model
+model Hotel {
+  hotel_id        Int     @id @default(autoincrement())
+  hotel_name      String? @db.VarChar(100)
+  location        String? @db.VarChar(100)
+  rating          Decimal? @db.Decimal(2, 1)
+  available_rooms Int?
+  price_per_night Decimal? @db.Decimal(10, 2)
+
+  hotelBookings   HotelBooking[]
+
+  @@map("Hotels")
+}
+
+model HotelBooking {
+  hotel_booking_id Int      @id @default(autoincrement())
+  booking_id       Int?
+  hotel_id         Int?
+  check_in         DateTime? @db.Date
+  check_out        DateTime? @db.Date
+
+  booking          Booking? @relation(fields: [booking_id], references: [booking_id])
+  hotel            Hotel?   @relation(fields: [hotel_id], references: [hotel_id])
+
+  @@map("HotelBooking")
+}
+
+// 10. Transport Model
+model Transport {
+  transport_id   Int     @id @default(autoincrement())
+  transport_type String? @db.VarChar(50)
+  company_name   String? @db.VarChar(100)
+  seat_capacity  Int?
+  departure_time String? @db.VarChar(20)
+
+  transportBookings TransportBooking[]
+
+  @@map("Transport")
+}
+
+model TransportBooking {
+  transport_booking_id Int        @id @default(autoincrement())
+  booking_id           Int?
+  transport_id         Int?
+
+  booking              Booking?   @relation(fields: [booking_id], references: [booking_id])
+  transport            Transport? @relation(fields: [transport_id], references: [transport_id])
+
+  @@map("TransportBooking")
+}
+
+// 11. Notification Model
+model Notification {
+  notification_id Int       @id @default(autoincrement())
+  user_id         Int?
+  message         String?   @db.Text
+  status          String?   @db.VarChar(20)
+  created_at      DateTime? @default(now()) @db.Timestamp(0)
+
+  user            User?     @relation(fields: [user_id], references: [user_id])
+
+  @@map("Notifications")
+}
+
+// 12. Wishlist Model
+model Wishlist {
+  wishlist_id Int          @id @default(autoincrement())
+  user_id     Int?
+  package_id  Int?
+
+  user        User?        @relation(fields: [user_id], references: [user_id])
+  tourPackage TourPackage? @relation(fields: [package_id], references: [package_id])
+
+  @@map("Wishlist")
+}
+
+// 13. Tour Guide Model
+model TourGuide {
+  guide_id        Int     @id @default(autoincrement())
+  guide_name      String? @db.VarChar(100)
+  language_spoken String? @db.VarChar(100)
+  experience_years Int?
+  phone           String? @db.VarChar(20)
+
+  packageGuides   PackageGuide[]
+
+  @@map("TourGuides")
+}
+
+model PackageGuide {
+  pg_id      Int          @id @default(autoincrement())
+  package_id Int?
+  guide_id   Int?
+
+  tourPackage TourPackage? @relation(fields: [package_id], references: [package_id])
+  guide       TourGuide?   @relation(fields: [guide_id], references: [guide_id])
+
+  @@map("PackageGuide")
+}
+
+// 14. Emergency Contact
+model EmergencyContact {
+  emergency_id    Int     @id @default(autoincrement())
+  user_id         Int?
+  contact_name    String? @db.VarChar(100)
+  relation_person String? @db.VarChar(50)
+  phone           String? @db.VarChar(20)
+
+  user            User?   @relation(fields: [user_id], references: [user_id])
+
+  @@map("EmergencyContacts")
+}
+
+// 15. Insurance
+model Insurance {
+  insurance_id     Int      @id @default(autoincrement())
+  booking_id       Int?
+  provider_name    String?  @db.VarChar(100)
+  insurance_amount Decimal? @db.Decimal(10, 2)
+
+  booking          Booking? @relation(fields: [booking_id], references: [booking_id])
+
+  @@map("Insurance")
+}
+
+// 16. Refund Model
+model Refund {
+  refund_id     Int           @id @default(autoincrement())
+  booking_id    Int?
+  refund_amount Decimal?      @db.Decimal(10, 2)
+  refund_date   DateTime?     @db.Date
+  refund_status RefundStatus? @default(Pending)
+
+  booking       Booking?      @relation(fields: [booking_id], references: [booking_id])
+
+  @@map("Refunds")
+}
+
+enum RefundStatus {
+  Pending
+  Completed
+}
+
+// 17. Support Ticket
+model SupportTicket {
+  ticket_id     Int           @id @default(autoincrement())
+  user_id       Int?
+  subject       String?       @db.VarChar(200)
+  message       String?       @db.Text
+  ticket_status TicketStatus? @default(Open)
+
+  user          User?         @relation(fields: [user_id], references: [user_id])
+
+  @@map("SupportTickets")
+}
+
+enum TicketStatus {
+  Open
+  Closed
+  Pending
+}
+
+// 18. Activity Model
+model Activity {
+  activity_id   Int      @id @default(autoincrement())
+  activity_name String?  @db.VarChar(100)
+  activity_cost Decimal? @db.Decimal(10, 2)
+  description   String?  @db.Text
+
+  packageActivities PackageActivities[]
+
+  @@map("Activities")
+}
+
+model PackageActivities {
+  pa_id       Int          @id @default(autoincrement())
+  package_id  Int?
+  activity_id Int?
+
+  tourPackage TourPackage? @relation(fields: [package_id], references: [package_id])
+  activity    Activity?    @relation(fields: [activity_id], references: [activity_id])
+
+  @@map("PackageActivities")
+}
