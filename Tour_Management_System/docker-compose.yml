@@ -1,1 +1,30 @@
 
+version: '3.8'
+
+services:
+  # ১. MySQL Database Service
+  db:
+    image: mysql:8.0
+    container_name: mysql_tour_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_DATABASE: TourManagement
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # auto-run .sql file to create database & tables on startup
+      - ./tour_Management.sql:/docker-entrypoint-initdb.d/tour_Management.sql
+
+  # ২. C++ Tour Management App Service
+  app:
+    build: .
+    container_name: cpp_tour_app
+    depends_on:
+      - db
+    stdin_open: true # interactive input (cin)
+    tty: true       # terminal output
+
+volumes:
+  mysql_data:
